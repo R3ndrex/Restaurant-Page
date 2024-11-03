@@ -24,6 +24,11 @@
         url("./fonts/roboto-v32-latin-regular.ttf") format("truetype");
 }
 
+:root {
+    --red-orange: #ff6e2b;
+    --orange: #ff8d4a;
+}
+
 *,
 *::after,
 *::before {
@@ -93,7 +98,20 @@ button {
 }
 
 button:hover {
-    color: orange;
+    color: var(--orange);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--orange);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--red-orange);
 }
 
 header ul {
@@ -103,7 +121,7 @@ header ul {
 }
 #content {
     background-color: white;
-    padding: 4rem;
+    padding: 3rem 4rem;
     align-self: center;
     display: flex;
     justify-content: center;
