@@ -37,7 +37,6 @@ class CreateMain {
     init() {
         for (let i = 0; i <= 4; i++) {
             const section = this.main.createElement("section", "article");
-            section.setAttribute("data-index", i);
             this.main.createElement("h2", section, HeaderText[i]);
             this.main.createElement("p", section, pText[i]);
 
