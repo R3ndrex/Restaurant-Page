@@ -34,6 +34,7 @@
 *::before {
     box-sizing: border-box;
 }
+
 body {
     background-image: url(./photo-1513104890138-7c749659a591.jpg);
     background-repeat: no-repeat;
@@ -53,6 +54,9 @@ p {
 h1,
 h2 {
     text-wrap: balance;
+}
+h2 {
+    margin-bottom: 0;
 }
 
 header {
@@ -119,6 +123,7 @@ header ul {
     display: flex;
     gap: 2rem;
 }
+
 #content {
     background-color: white;
     padding: 3rem 4rem;
@@ -126,7 +131,13 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 75ch;
+    max-width: calc(4rem + 70ch);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     & li {
         width: 33ch;
         display: flex;
@@ -143,5 +154,57 @@ header ul {
     }
     & button:hover {
         color: var(--orange);
+    }
+    & img,
+    .location-slider {
+        align-self: center;
+        width: 133%;
+        border: 2px solid white;
+    }
+}
+
+.location-slider {
+    position: relative;
+    display: flex;
+    & p {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.116);
+        backdrop-filter: blur(5px);
+        position: absolute;
+    }
+    img {
+        width: 100%;
+        border: none;
+    }
+    .button-left-slider,
+    .button-right-slider {
+        cursor: pointer;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        bottom: 50%;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-radius: 0;
+    }
+    .button-left-slider {
+        left: 0;
+        margin-left: 1rem;
+        border-right: 30px solid var(--orange); /* Треугольник вправо */
+    }
+
+    .button-right-slider {
+        right: 0;
+        margin-right: 1rem;
+        border-left: 30px solid var(--orange); /* Adjust width and color */
+    }
+    .button-right-slider:hover {
+        border-left: 30px solid var(--red-orange);
+    }
+    .button-left-slider:hover {
+        border-right: 30px solid var(--red-orange);
     }
 }
