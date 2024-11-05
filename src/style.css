@@ -36,7 +36,7 @@
 }
 
 body {
-    background-image: url(./photo-1513104890138-7c749659a591.jpg);
+    background-image: url(./images/site-background.jpg);
     background-repeat: no-repeat;
 
     margin: 0;
@@ -58,6 +58,10 @@ h2 {
 h2 {
     margin-bottom: 0;
 }
+.icon {
+    height: 3ch;
+    width: min-content;
+}
 
 header {
     display: grid;
@@ -74,9 +78,7 @@ header {
     -moz-box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.36);
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.36);
     color: white;
-    & img {
-        height: 3ch;
-    }
+
     & h1 {
         margin-top: 0;
         font-size: 3rem;
@@ -193,13 +195,13 @@ section {
     .button-left-slider {
         left: 0;
         margin-left: 1rem;
-        border-right: 30px solid var(--orange); /* Треугольник вправо */
+        border-right: 30px solid var(--orange);
     }
 
     .button-right-slider {
         right: 0;
         margin-right: 1rem;
-        border-left: 30px solid var(--orange); /* Adjust width and color */
+        border-left: 30px solid var(--orange);
     }
     .button-right-slider:hover {
         border-left: 30px solid var(--red-orange);
