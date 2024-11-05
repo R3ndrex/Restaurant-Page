@@ -16,5 +16,11 @@ class CreatePage {
     clearPage() {
         this.parentNode.innerHTML = "";
     }
+    createImage(src, parent, alt = "") {
+        const image = this.createElement("img", parent);
+        image.src = src;
+        image.alt = alt;
+        return image;
+    }
 }
 export default CreatePage;
