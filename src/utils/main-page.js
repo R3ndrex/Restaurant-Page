@@ -23,8 +23,8 @@ const weekDays = {
 };
 
 class CreateMain {
-    constructor(createPage) {
-        this.main = createPage;
+    constructor(createPageObject) {
+        this.main = createPageObject;
         this.main.createElement("article");
     }
     CreateSchedule(days, parent) {
