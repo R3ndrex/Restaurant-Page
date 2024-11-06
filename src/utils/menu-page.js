@@ -1,7 +1,8 @@
 class CreateMenuPage {
     constructor(createPageObject) {
         this.main = createPageObject;
-        this.article = this.main.createElement("article");
+        const article = (this.article = this.main.createElement("article"));
+        article.classList.add("menu");
     }
 }
 

@@ -35,7 +35,8 @@ const socials = {
 class CreateAboutPage {
     constructor(createPageObject) {
         this.main = createPageObject;
-        this.article = this.main.createElement("article");
+        const article = (this.article = this.main.createElement("article"));
+        article.classList.add("about");
     }
     createSections() {
         for (let i = 0; i < 3; i++) {

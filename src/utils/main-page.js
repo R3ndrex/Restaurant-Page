@@ -25,7 +25,8 @@ const weekDays = {
 class CreateMain {
     constructor(createPageObject) {
         this.main = createPageObject;
-        this.main.createElement("article");
+        const article = this.main.createElement("article");
+        article.classList.add("main");
     }
     CreateSchedule(days, parent) {
         const ul = this.main.createElement("ul", parent);
