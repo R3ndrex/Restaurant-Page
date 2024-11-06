@@ -3,6 +3,7 @@ import "./style.css";
 import CreatePage from "./utils/createPage.js";
 import MainPage from "./utils/main-page.js";
 import AboutPage from "./utils/about-page.js";
+import MenuPage from "./utils/menu-page.js";
 
 const buttonMenu = document.querySelector(".menu");
 const buttonAbout = document.querySelector(".about");
@@ -33,6 +34,8 @@ buttonHome.addEventListener("click", () => {
 
 buttonMenu.addEventListener("click", () => {
     page.clearPage();
+    const menu = new MenuPage(page);
+    menu.init();
     buttonHome.disabled = false;
     buttonMenu.disabled = true;
     buttonAbout.disabled = false;
