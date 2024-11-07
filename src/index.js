@@ -2,8 +2,6 @@ import "./style.css";
 
 import CreatePage from "./utils/createPage.js";
 import MainPage from "./utils/main-page.js";
-import AboutPage from "./utils/about-page.js";
-import MenuPage from "./utils/menu-page.js";
 
 const buttonMenu = document.querySelector(".menu");
 const buttonAbout = document.querySelector(".about");
@@ -16,8 +14,10 @@ main.init();
 
 buttonAbout.addEventListener("click", () => {
     page.clearPage();
-    const aboutPage = new AboutPage(page);
-    aboutPage.init();
+    import("./utils/menu-page.js").then(({ default: AboutPage }) => {
+        const menu = new AboutPage(page);
+        menu.init();
+    });
     buttonHome.disabled = false;
     buttonMenu.disabled = false;
     buttonAbout.disabled = true;
@@ -34,8 +34,10 @@ buttonHome.addEventListener("click", () => {
 
 buttonMenu.addEventListener("click", () => {
     page.clearPage();
-    const menu = new MenuPage(page);
-    menu.init();
+    import("./utils/menu-page.js").then(({ default: MenuPage }) => {
+        const menu = new MenuPage(page);
+        menu.init();
+    });
     buttonHome.disabled = false;
     buttonMenu.disabled = true;
     buttonAbout.disabled = false;
