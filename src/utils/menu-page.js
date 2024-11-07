@@ -41,23 +41,25 @@ const menuItems = {
     },
 };
 
-function showDefault() {
-    return menuItems;
-}
+const menuListFunctions = [
+    function showDefault() {
+        return menuItems;
+    },
+    function sortByPopularity(pizzas) {
+        return Object.fromEntries(
+            Object.entries(pizzas).sort(
+                ([, pizza1], [, pizza2]) =>
+                    pizza2.popularity - pizza1.popularity
+            )
+        );
+    },
 
-function sortBySale(pizzas) {
-    return Object.fromEntries(
-        Object.entries(pizzas).filter(([key, pizza]) => pizza.sale)
-    );
-}
-function sortByPopularity(pizzas) {
-    return Object.fromEntries(
-        Object.entries(pizzas).sort(
-            ([, pizza1], [, pizza2]) => pizza2.popularity - pizza1.popularity
-        )
-    );
-}
-const menuListFunctions = [showDefault, sortByPopularity, sortBySale];
+    function sortBySale(pizzas) {
+        return Object.fromEntries(
+            Object.entries(pizzas).filter(([key, pizza]) => pizza.sale)
+        );
+    },
+];
 
 class CreateMenuPage {
     constructor(createPageObject) {
