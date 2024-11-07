@@ -14,7 +14,7 @@ main.init();
 
 buttonAbout.addEventListener("click", () => {
     page.clearPage();
-    import("./utils/menu-page.js").then(({ default: AboutPage }) => {
+    import("./utils/about-page.js").then(({ default: AboutPage }) => {
         const menu = new AboutPage(page);
         menu.init();
     });
