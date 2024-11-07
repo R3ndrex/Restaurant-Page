@@ -40,6 +40,7 @@ const menuItems = {
         popularity: 1,
     },
 };
+
 function showDefault() {
     return menuItems;
 }
