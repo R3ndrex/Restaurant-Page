@@ -42,30 +42,32 @@ class CreateAboutPage {
         for (let i = 0; i < 3; i++) {
             const section = this.main.createElement("section", this.article);
             this.main.createElement("h2", section, HeaderText[i]);
-            if (i === 0) {
-                this.main.createElement(
-                    "p",
-                    section,
-                    `At Our Pizzeria, we’re not just about pizza – we’re about bringing people together, sharing flavors, and creating unforgettable moments. Every pizza we make is crafted with fresh, hand-picked ingredients, using traditional recipes passed down through generations. From our crispy thin crust to our homemade sauces and locally sourced toppings, we believe every slice should be a masterpiece.`
-                );
-                this.main.createImage(
-                    pizzeriaInside,
-                    section,
-                    "pizzeriaInside"
-                );
-            }
-            if (i === 1) {
-                section.classList.add("location");
-            }
-            if (i === 2) {
-                const ul = this.main.createElement("ul", section);
-                for (let i = 0; i < 4; i++) {
-                    const li = this.main.createElement("li", ul);
-                    const image = this.main.createImage(socials[i][1], li);
-                    image.classList.add("icon");
-                    const text = document.createTextNode(socials[i][0]);
-                    li.appendChild(text);
-                }
+            switch (i) {
+                case 0:
+                    this.main.createElement(
+                        "p",
+                        section,
+                        `At Our Pizzeria, we’re not just about pizza – we’re about bringing people together, sharing flavors, and creating unforgettable moments. Every pizza we make is crafted with fresh, hand-picked ingredients, using traditional recipes passed down through generations. From our crispy thin crust to our homemade sauces and locally sourced toppings, we believe every slice should be a masterpiece.`
+                    );
+                    this.main.createImage(
+                        pizzeriaInside,
+                        section,
+                        "pizzeriaInside"
+                    );
+                    break;
+                case 1:
+                    section.classList.add("location");
+                    break;
+                case 2:
+                    const ul = this.main.createElement("ul", section);
+                    for (let i = 0; i < 4; i++) {
+                        const li = this.main.createElement("li", ul);
+                        const image = this.main.createImage(socials[i][1], li);
+                        image.classList.add("icon");
+                        const text = document.createTextNode(socials[i][0]);
+                        li.appendChild(text);
+                    }
+                    break;
             }
         }
     }
