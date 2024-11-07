@@ -10,6 +10,7 @@ const buttonHome = document.querySelector(".home");
 const content = document.querySelector("#content");
 const page = new CreatePage(content);
 const main = new MainPage(page);
+main.init();
 
 buttonAbout.addEventListener("click", () => {
     page.clearPage();
