@@ -4,10 +4,10 @@ This project is a single page web application that implements dynamic navigation
 
 ## Screenshots
 
--   [!Main](https://i.imgur.com/tiQYA5N.jpeg?raw=true)
--   [!Menu](https://i.imgur.com/ysNErYP.jpeg?raw=true)
--   [!MenuSales](https://i.imgur.com/yMbEswf.jpeg?raw=true)
--   [!About](https://i.imgur.com/5ED0OIG.jpeg?raw=true)
+-   ![Main](https://i.imgur.com/tiQYA5N.jpeg?raw=true)
+-   ![Menu](https://i.imgur.com/ysNErYP.jpeg?raw=true)
+-   ![MenuSales](https://i.imgur.com/yMbEswf.jpeg?raw=true)
+-   ![About](https://i.imgur.com/5ED0OIG.jpeg?raw=true)
 
 ## Sourses:
 
