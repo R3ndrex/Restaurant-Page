@@ -38,7 +38,7 @@ class CreateAboutPage {
         const article = (this.article = this.main.createElement("article"));
         article.classList.add("about");
     }
-    createSections() {
+    #createSections() {
         for (let i = 0; i < 3; i++) {
             const section = this.main.createElement("section", this.article);
             this.main.createElement("h2", section, HeaderText[i]);
@@ -72,7 +72,7 @@ class CreateAboutPage {
         }
     }
 
-    createSlider(text, images, parent, i = 0) {
+    #createSlider(text, images, parent, i = 0) {
         document.querySelector(parent).innerHTML = "";
         this.main.createElement("h2", parent, "Location");
 
@@ -81,12 +81,12 @@ class CreateAboutPage {
         const buttonRight = this.main.createElement("div", div);
         buttonLeft.addEventListener("click", () => {
             if (Object.keys(images).length + 1 >= i && i - 1 > -1) {
-                this.createSlider(text, images, parent, i - 1);
+                this.#createSlider(text, images, parent, i - 1);
             }
         });
         buttonRight.addEventListener("click", () => {
             if (Object.keys(images).length - 1 > i && i + 1 > -1) {
-                this.createSlider(text, images, parent, i + 1);
+                this.#createSlider(text, images, parent, i + 1);
             }
         });
         buttonLeft.classList.add("button-left-slider");
@@ -98,8 +98,8 @@ class CreateAboutPage {
     }
 
     init() {
-        this.createSections();
-        this.createSlider(imagesText, imagesPath, ".location");
+        this.#createSections();
+        this.#createSlider(imagesText, imagesPath, ".location");
     }
 }
 

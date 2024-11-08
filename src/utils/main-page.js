@@ -22,7 +22,7 @@ class CreateMain {
         const article = this.main.createElement("article");
         article.classList.add("main");
     }
-    CreateSchedule(days, parent) {
+    #CreateSchedule(days, parent) {
         const ul = this.main.createElement("ul", parent);
         for (const day in days) {
             if (Object.prototype.hasOwnProperty.call(days, day)) {
@@ -37,7 +37,7 @@ class CreateMain {
             this.main.createElement("h2", section, HeaderText[i]);
             this.main.createElement("p", section, pText[i]);
             if (HeaderText[i] === "Time") {
-                this.CreateSchedule(weekDays, section);
+                this.#CreateSchedule(weekDays, section);
             }
             if (HeaderText[i] === "Order Online") {
                 this.main.createElement("button", section, "Order Now");

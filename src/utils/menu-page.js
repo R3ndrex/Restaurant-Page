@@ -70,10 +70,10 @@ class CreateMenuPage {
     init() {
         const section = this.main.createElement("section", this.article);
         const section2 = this.main.createElement("section", this.article);
-        this.createMenuList(menuItems, section, section2);
-        this.createMenuItems(menuItems, section2);
+        this.#createMenuList(menuItems, section, section2);
+        this.#createMenuItems(menuItems, section2);
     }
-    createMenuList(pizzas, section, section2) {
+    #createMenuList(pizzas, section, section2) {
         this.main.createElement("h2", section, "Menu");
         const ul = this.main.createElement("ul", section);
         ul.classList.add("menu-list");
@@ -86,11 +86,11 @@ class CreateMenuPage {
             );
             button.addEventListener("click", () => {
                 const newPizzas = menuListFunctions[i](pizzas);
-                this.createMenuItems(newPizzas, section2);
+                this.#createMenuItems(newPizzas, section2);
             });
         }
     }
-    createMenuItems(pizzas, section) {
+    #createMenuItems(pizzas, section) {
         section.innerHTML = "";
         const ul = this.main.createElement("ul", section);
         ul.classList.add("menu-items");
