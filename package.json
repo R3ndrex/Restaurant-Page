@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "webpack --config webpack.prod.js",
-        "webpack-server": "webpack serve --config webpack.dev.js",
-        "deploy": "git checkout gh-pages && git merge main --no-edit && git add dist -f && git commit -m \"Deployment commit\" && build && git subtree push --prefix dist origin gh-pages && git checkout main"
+        "build-prod":"webpack serve --open --config webpack.prod.js",
+        "webpack-server": "webpack serve --open --config webpack.dev.js"
     },
     "keywords": [],
     "author": "",
@@ -18,6 +18,7 @@
         "style-loader": "^4.0.0",
         "webpack": "^5.96.1",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^5.1.0"
+        "webpack-dev-server": "^5.1.0",
+        "webpack-merge": "^6.0.1"
     }
 }
